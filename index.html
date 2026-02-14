@@ -13,20 +13,22 @@
     <script type="text/javascript" src="jscex-async-powerpack.min.js"></script>
     <script type="text/javascript" src="function.js" charset="utf-8"></script>
     <script type="text/javascript" src="love.js" charset="utf-8"></script>
-    <script>
-        function playAudio() {
-            var audio = document.getElementById("myAudio");
-            audio.play();
-        }
-    </script>
+<script>
+function playAudio() {
+    var audio = document.getElementById("myAudio");
+    audio.volume = 0.7;
+    audio.play().catch(function(e){
+        console.log("Autoplay blocked");
+    });
+}
+</script>
 </head>
 <body>
     <div id="main">
         <div id="error"><a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a> (<a href="http://firefox.com.cn/download/">Firefox</a>)</div>
-        <audio autoplay="autoplay" height="100" width="100" id="myAudio">
-            <source src="aud.mp3" type="audio/mp3" />
-            <embed height="100" width="100" src="aud.mp3" />
-        </audio>
+<audio id="myAudio" loop>
+    <source src="aud.mp3" type="audio/mpeg">
+</audio>
         <div id="wrap">
             <div id="text">
                 <div id="code">
@@ -181,4 +183,5 @@
     })();
     </script>
 </body>
+
 </html>
