@@ -1063,5 +1063,4 @@
     window.Point = Point;
     window.Tree = Tree;
 
-
 })(window);
